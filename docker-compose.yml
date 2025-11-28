@@ -51,7 +51,9 @@ services:
         condition: service_healthy
     volumes:
       - ./backend:/app/backend
-    command: npm run dev
+    # Use production start in containers; for local development override to `npm run dev`
+    command: npm start
+    restart: unless-stopped
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:5000/health" ]
       interval: 30s

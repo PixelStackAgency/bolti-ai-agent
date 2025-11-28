@@ -6,17 +6,28 @@ const Lead = require('../models/Lead');
 const Tenant = require('../models/Tenant');
 const { v4: uuidv4 } = require('uuid');
 
-// Initialize Redis connection
-const redisClient = redis.createClient({
-  host: process.env.REDIS_HOST || 'localhost',
-  port: process.env.REDIS_PORT || 6379
-});
+// Initialize Redis connection (supports password/url)
+const redisOptions = {};
+if (process.env.REDIS_URL) {
+  // If a single REDIS_URL is provided (e.g. redis://:password@host:port), use it
+  redisOptions.url = process.env.REDIS_URL;
+} else {
+  redisOptions.socket = {
+    host: process.env.REDIS_HOST || 'localhost',
+    port: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT, 10) : 6379
+  };
+  if (process.env.REDIS_PASSWORD) redisOptions.password = process.env.REDIS_PASSWORD;
+}
+
+const redisClient = redis.createClient(redisOptions);
 
 // Create call queue
 const callQueue = new Queue('calls', {
-  redis: {
+  // Bull accepts connection options; prefer REDIS_URL if available
+  redis: process.env.REDIS_URL || {
     host: process.env.REDIS_HOST || 'localhost',
-    port: process.env.REDIS_PORT || 6379
+    port: process.env.REDIS_PORT || 6379,
+    password: process.env.REDIS_PASSWORD || undefined
   }
 });
 
