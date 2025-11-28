@@ -12,8 +12,10 @@ import LeadsPage from './pages/LeadsPage';
 import CallHistoryPage from './pages/CallHistoryPage';
 import OnboardingPage from './pages/OnboardingPage';
 
-// Configure axios
-axios.defaults.baseURL = '/api';
+// Configure axios: read backend URL from Vite env (VITE_API_URL)
+// In development Vite proxies `/api` to localhost:5000 (see `vite.config.js`)
+// In production set `VITE_API_URL` in Vercel to your backend URL, e.g. https://api.yourdomain.com
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '/api';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
