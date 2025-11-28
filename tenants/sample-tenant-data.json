@@ -1,0 +1,173 @@
+{
+  "sampleTenant": {
+    "tenantId": "tenant_demo01",
+    "companyName": "Demo E-Commerce Store",
+    "industryType": "ecommerce",
+    "email": "owner@demostore.com",
+    "phone": "+919876543210",
+    "verifiedNumbers": [
+      {
+        "number": "+918897654321",
+        "isVerified": true,
+        "exotelSid": "sid_12345"
+      }
+    ],
+    "escalationNumbers": [
+      {
+        "number": "+919876543211",
+        "agentName": "Rajesh Support",
+        "available": true
+      }
+    ],
+    "plan": "growth",
+    "billingCycle": "monthly",
+    "subscriptionStatus": "active",
+    "knowledgeBaseSources": [
+      {
+        "type": "text",
+        "source": "Standard product catalog with 100+ products. All items in stock.",
+        "uploadedAt": "2025-01-15T10:00:00Z",
+        "chunkCount": 15
+      },
+      {
+        "type": "text",
+        "source": "Shipping: Free shipping on orders above ₹500. Delivery in 2-3 days pan India.",
+        "uploadedAt": "2025-01-15T10:05:00Z",
+        "chunkCount": 3
+      }
+    ],
+    "aiLanguage": "hi",
+    "callTimeout": 120,
+    "recordingEnabled": true,
+    "whatsappEnabled": true,
+    "smsEnabled": true,
+    "sentimentAnalysis": true,
+    "dndEnabled": true,
+    "monthlyCallMinutes": 20000,
+    "usedCallMinutes": 1250,
+    "monthlyCallsReset": "2025-02-15T00:00:00Z",
+    "createdAt": "2024-12-01T08:30:00Z",
+    "updatedAt": "2025-01-20T14:22:00Z",
+    "onboardingCompleted": true
+  },
+
+  "sampleUser": {
+    "tenantId": "tenant_demo01",
+    "phone": "+919876543210",
+    "name": "Amit Sharma",
+    "email": "amit@demostore.com",
+    "role": "admin",
+    "isVerified": true,
+    "lastLogin": "2025-01-20T14:22:00Z",
+    "loginAttempts": 0,
+    "isLocked": false,
+    "createdAt": "2024-12-01T08:30:00Z"
+  },
+
+  "sampleCall": {
+    "tenantId": "tenant_demo01",
+    "callId": "call_xyz123",
+    "exotelCallId": "exotel_c123456",
+    "type": "inbound",
+    "fromNumber": "+919123456789",
+    "toNumber": "+918897654321",
+    "callerLanguage": "hi",
+    "status": "completed",
+    "aiTranscript": "Caller: Hello, I want to order a laptop. AI: Welcome to Demo Store! We have premium laptops starting from ₹35,000. Which brand interest you? Caller: HP or Dell? AI: Both available. HP gaming laptop ₹42,999, Dell business laptop ₹38,999. Shall I create an order?",
+    "aiSentiment": "positive",
+    "resolvedByAI": true,
+    "escalated": false,
+    "recordingUrl": "https://s3.ap-south-1.amazonaws.com/recordings/call_xyz123.mp3",
+    "recordingDuration": 145,
+    "leadData": {
+      "name": "Priya Verma",
+      "phone": "+919123456789",
+      "email": "priya@mail.com",
+      "query": "Interested in HP laptop ₹42,999"
+    },
+    "duration": 145,
+    "costMinutes": 3,
+    "startTime": "2025-01-20T10:15:00Z",
+    "endTime": "2025-01-20T10:17:25Z",
+    "createdAt": "2025-01-20T10:15:00Z"
+  },
+
+  "sampleLead": {
+    "tenantId": "tenant_demo01",
+    "callId": "call_xyz123",
+    "name": "Priya Verma",
+    "phone": "+919123456789",
+    "email": "priya@mail.com",
+    "company": "Tech Consultants Ltd",
+    "query": "Interested in HP laptop ₹42,999",
+    "transcriptSummary": "Customer inquired about HP laptop pricing and specifications. Showed interest in ₹42,999 model. Provided product details.",
+    "resolvedByAI": true,
+    "escalatedToHuman": false,
+    "status": "contacted",
+    "source": "inbound_call",
+    "tags": ["laptop", "hp", "high-value"],
+    "createdAt": "2025-01-20T10:15:00Z"
+  },
+
+  "sampleTicket": {
+    "tenantId": "tenant_demo01",
+    "callId": "call_xyz123",
+    "ticketId": "ticket_999",
+    "title": "HP Laptop Order Follow-up",
+    "description": "Customer wants to proceed with HP laptop purchase. Ready to place order.",
+    "customerName": "Priya Verma",
+    "customerPhone": "+919123456789",
+    "customerEmail": "priya@mail.com",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "sales",
+    "sentiment": "positive",
+    "intentDetected": "purchase_intent",
+    "tags": ["urgent", "high-value-customer"],
+    "createdAt": "2025-01-20T10:15:00Z"
+  },
+
+  "sampleSubscription": {
+    "tenantId": "tenant_demo01",
+    "plan": "growth",
+    "billingCycle": "monthly",
+    "amount": 20000,
+    "currency": "INR",
+    "razorpaySubscriptionId": "sub_test123",
+    "razorpayCustomerId": "cust_test123",
+    "status": "active",
+    "startDate": "2024-12-01T00:00:00Z",
+    "currentPeriodStart": "2025-01-15T00:00:00Z",
+    "currentPeriodEnd": "2025-02-15T00:00:00Z",
+    "nextBillingDate": "2025-02-15T00:00:00Z",
+    "monthlyCallMinutes": 20000,
+    "usedCallMinutes": 1250,
+    "campaigns": -1,
+    "usedCampaigns": 2,
+    "discountApplied": false,
+    "payments": [
+      {
+        "paymentId": "pay_test001",
+        "amount": 20000,
+        "status": "captured",
+        "date": "2024-12-01T08:30:00Z",
+        "invoiceUrl": "https://razorpay.com/invoice/inv_123"
+      }
+    ],
+    "createdAt": "2024-12-01T08:30:00Z"
+  },
+
+  "testingNotes": {
+    "loginFlow": {
+      "step1": "Go to http://localhost:3000/login",
+      "step2": "Enter phone: +919876543210",
+      "step3": "Click 'Send OTP'",
+      "step4": "In development, OTP printed to console: 123456",
+      "step5": "Enter OTP and login"
+    },
+    "knowledgeBase": "Add PDF/URL/text from Dashboard > Knowledge Base. AI will use this to answer customer queries.",
+    "makeCalls": "Dashboard > Campaigns > Upload CSV with phone numbers > Start Campaign",
+    "trackLeads": "Dashboard > Leads to see all captured leads",
+    "billing": "Dashboard > Billing to view plans and change subscription"
+  }
+}

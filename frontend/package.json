@@ -1,0 +1,25 @@
+{
+  "name": "bolti-ai-frontend",
+  "version": "1.0.0",
+  "description": "Bolti AI Frontend React App",
+  "private": true,
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.16.0",
+    "axios": "1.5.0",
+    "tailwindcss": "3.3.3",
+    "lucide-react": "0.292.0",
+    "recharts": "2.10.0",
+    "react-dropzone": "14.2.3"
+  },
+  "devDependencies": {
+    "vite": "5.0.0",
+    "@vitejs/plugin-react": "4.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

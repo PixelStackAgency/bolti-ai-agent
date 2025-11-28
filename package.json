@@ -1,0 +1,25 @@
+{
+  "name": "bolti-ai-saas",
+  "version": "1.0.0",
+  "description": "Parallel Voice Sales & Support Agent - India Ready SaaS",
+  "main": "backend/app.js",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && node app.js",
+    "dev:worker": "cd backend && node workers/call-dispatch-worker.js",
+    "dev": "npm run dev:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "node backend/app.js",
+    "worker": "node backend/workers/call-dispatch-worker.js"
+  },
+  "keywords": [
+    "AI",
+    "Voice",
+    "SaaS",
+    "India",
+    "Call Center",
+    "Exotel"
+  ],
+  "author": "Bolti AI",
+  "license": "MIT"
+}
